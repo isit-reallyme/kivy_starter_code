@@ -1,0 +1,63 @@
+
+<DemoApp>:
+    
+    Screen:
+	    name: "screen1"
+
+        MDLabel:
+            text: "Screens Template"
+            pos_hint: {'center_x': 0.5,'center_y': 0.85}
+            font_style: "H6"
+            font_name: "Roboto-Bold"
+            halign: "center"
+            padding: "12dp", "0dp"
+
+        MDLabel:
+            text: "some random text goes in here"
+            pos_hint: {'center_x': 0.5,'center_y': 0.7}
+            font_name: "Roboto-Regular"
+            font_style: "Body1"
+            text_color: "black"
+            font_size: sp(12)
+            halign: "center"
+            padding: "24dp", "0dp"     
+
+            
+        MDRaisedButton:
+            text: "next" 
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            md_bg_color: [22/255, 37/255, 172/255, 1]
+            on_release: 
+                root.transition.direction = "left"
+                root.current = "screen2"
+
+    # second screen 
+    Screen:
+        name: "screen2"
+        MDFloatLayout:
+
+            MDLabel:
+                text: "Screens Template"
+                pos_hint: {'center_x': 0.5,'center_y': 0.85}
+                font_style: "H6"
+                font_name: "Roboto-Bold"
+                halign: "center"
+                padding: "12dp", "0dp"
+
+            MDLabel:
+                text: "some random text goes in here"
+                pos_hint: {'center_x': 0.5,'center_y': 0.7}
+                font_name: "Roboto-Regular"
+                font_style: "Body1"
+                text_color: "black"
+                font_size: sp(12)
+                halign: "center"
+                padding: "24dp", "0dp"
+            
+            MDRaisedButton:
+                text: "previous" 
+                pos_hint: {'center_x': 0.5,'center_y': 0.4}
+                md_bg_color: [22/255, 37/255, 172/255, 1]
+                on_release: 
+                    root.transition.direction = "right"
+                    root.current = "screen1"
